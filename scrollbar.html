@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>scrollbar</title>
+<style>
+/* reset */
+html{ overflow-y:scroll;}
+body{ font-size:12px; color:#666; font-family: \5b8b\4f53,sans-serif,"Microsoft YaHei", Arial, Verdana, Helvetica; padding: 30px;}
+body,dl,dd,h1,h2,h3,h4,h5,h6,p,form{ margin:0;}
+ol,ul,fieldset,input,textarea,blockquote{ margin:0; padding:0;}
+img{ vertical-align:middle; border:none;}
+ol,ul { list-style:none;}
+li{ list-style-type:none;}
+input{ vertical-align:middle;}
+address,cite,code,em,th{ font-weight:normal; font-style:normal;}
+h1,h2,h3,h4,h5,h6,input,select,textarea,th,td{font-size:12px; font-weight:normal;}
+input{ vertical-align:middle;}
+table,td{ border-collapse:collapse;}
+table td{ empty-cells:show;}
+a{ color:#333; text-decoration:none;}
+a:hover{ color:#f00; text-decoration:underline;}
+/* class */
+.fb {font-weight:bold}
+.fi {font-style:italic}
+.linethrough {text-decoration:line-through}
+.f12px{ font-size:12px}
+.f14px{ font-size:14px}
+.f18px{ font-size:18px}
+.left{ float:left;}
+.right{ float:right;}
+.underline{ text-decoration:underline;}
+.blank10{ height:10px; display:block; overflow:hidden;}
+.blank15{ height:10px; display:block; overflow:hidden;}
+.blank20{ height:10px; display:block; overflow:hidden;}
+.clearfix{ zoom:1}
+.clearfix:after{ display:block; clear:both; content:""; visibility:hidden; height:0;}
+
+.wrap{
+	border: #ddd 1px solid;
+	height: 300px;
+	width: 300px;
+	overflow: hidden;
+	position: relative;
+	margin: 30px 0 0;
+	font-size: 13px;
+	line-height: 24px;
+}
+.content{
+	width: 300px;
+	height: 300px;
+	overflow-y: auto;
+	padding-right: 30px;
+}
+.bar-bg{
+	position: absolute;
+	width: 10px;
+	height: 300px;
+	overflow: hidden;
+	background-color: #eee;
+	right: 0;
+	top: 0;
+}
+.bar{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	background-color: #ddd;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+.bar-content{
+	padding: 20px;
+}
+
+.content3{
+	width: 300px;
+	height: 300px;
+	padding-bottom: 30px;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.bar-content3{
+	width: 100%;
+	height: 300px;
+}
+.bar-content3 li{
+	width: 200px;
+	height: 200px;
+	margin-top: 30px;
+	border: #eee 1px solid;
+	float: left;
+}
+.bar-bg3{
+	position: absolute;
+	height: 10px;
+	width: 300px;
+	overflow: hidden;
+	background-color: #eee;
+	left: 0;
+	top: 290px;
+}
+.bar3{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	background-color: #ddd;
+	left: 0;
+	top: 290px;
+	cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<h1>垂直 <a href="javascript:void(0)" id="vAdd">添加内容+</a></h1>
+
+<div class="wrap">
+	<div id="v" class="content" data-trigger="scrollbar" data-options="{'direction':'vertical','barBg' :'#barBg','bar':'#bar','barContainer':'#barContainer'}" autocomplete="off">
+		<div class="bar-bg" id="barBg"></div>
+		<div class="bar" id="bar"></div>
+		<div class="bar-content" id="barContainer">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit, repellat cumque atque repellendus maxime dolorem veniam ut aliquam libero fugiat, dolorum eius! Sint!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit, repellat cumque atque repellendus maxime dolorem veniam ut aliquam libero fugiat, dolorum eius! Sint!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit, repellat cumque atque repellendus maxime dolorem veniam ut aliquam libero fugiat, dolorum eius! Sint!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit, repellat cumque atque repellendus maxime dolorem veniam ut aliquam libero fugiat, dolorum eius! Sint!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit, repellat cumque atque repellendus maxime dolorem veniam ut aliquam libero fugiat, dolorum eius! Sint!</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit, repellat cumque atque repellendus maxime dolorem veniam ut aliquam libero fugiat, dolorum eius! Sint!</p>			
+		</div>
+	</div>
+</div>
+
+<div style="height:50px;"></div>
+
+<h1>水平 <a href="javascript:void(0)" id="hAdd">添加内容+</a></h1>
+
+<div class="wrap">
+	<div id="h" class="content3" data-trigger="scrollbar" data-options="{'direction':'horizontal','barBg' :'#barBg3','bar':'#bar3','barContainer':'#barContainer3'}" autocomplete="off">
+		<div class="bar-bg3" id="barBg3"></div>
+		<div class="bar3" id="bar3"></div>
+		<div class="bar-content3" id="barContainer3">
+			<ul>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit</li>
+				<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum ducimus quod in laudantium voluptatem sit</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="lib/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="src/scrollbar.js"></script>
+<script type="text/javascript">
+(function($) {
+	var v = $('#v').data('enjoy.scrollbar');
+	var i = 1;
+	$('#vAdd').on('click', function(){
+		$('#barContainer').append('<div style="height:100px;">content' + (i++) + '</div>');
+		// 从新设置滚动条
+		v.reset();
+		// 滚动到底部
+		v.scrollDown();
+	});
+	// 监听滚动数据
+	$('#v').on('scrolling.enjoy.scrollbar', function(e, sT, top){
+		console.log && console.log(sT);
+	});
+
+
+	var h = $('#h').data('enjoy.scrollbar');
+	var j = 1;
+	$('#hAdd').on('click', function(){
+		$('#barContainer3 ul').append('<li>content' + (j++) + '</li>');
+		var liLen = $('#barContainer3 ul').find('li').length;
+		var liW = $('#barContainer3 ul').find('li').outerWidth();
+		w = liLen * liW;
+		h.reset(w);
+		h.scrollRight();
+	});
+	$('#h').on('scrolling.enjoy.scrollbar', function(e, sL, left){
+		console.log && console.log(sL);
+	});
+})(jQuery);	
+</script>
+</body>
+</html>
