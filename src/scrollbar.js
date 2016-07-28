@@ -1,5 +1,5 @@
 /**
- * [h5播放器]
+ * [模拟滚动条]
  * @update: 2016.07.28
  * @author: yongcheng0660@163.com
  * @github: https://github.com/bravefuture
